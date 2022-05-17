@@ -1,4 +1,4 @@
-name: Build & deploy
+name: React CI/CD
 
 on:
   push:
@@ -15,13 +15,13 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: 13.x
-    
+        node-version: 14
+      # npm ci is relatively faster than npm install
     - name: Install NPM packages
       run: npm ci
     
