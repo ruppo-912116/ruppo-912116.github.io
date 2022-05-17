@@ -8,6 +8,7 @@ on:
     branches:
       - main
 
+
 jobs:
   build:
     name: Build
@@ -29,7 +30,7 @@ jobs:
       run: npm run build
 
     - name: upload build files
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2
       with:
         name: production-files
         path: ./build
@@ -51,4 +52,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v2
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./out
+        publish_dir: ./build
