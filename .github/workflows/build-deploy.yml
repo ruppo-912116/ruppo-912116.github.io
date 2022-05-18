@@ -13,6 +13,8 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
     - name: Checkout code
@@ -22,7 +24,6 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 14
-      # npm ci is relatively faster than npm install
     - name: Install NPM packages
       run: npm ci
     
