@@ -54,6 +54,6 @@ jobs:
       uses: peaceiris/actions-gh-pages@v2
       with:
 #        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        entrypoint: ./build
+        entrypoint: sudo ./build
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
