@@ -39,7 +39,7 @@ jobs:
     name: Deploy
     needs: build
     permissions:
-      contents: write
+      contents: read
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     
@@ -54,6 +54,6 @@ jobs:
       uses: peaceiris/actions-gh-pages@v2
       with:
 #        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        entrypoint: sudo ./build
+        entrypoint: ./build
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
