@@ -13,28 +13,28 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+      # npm ci is relatively faster than npm install
+    - name: Install NPM packages
+      run: npm ci
+    
+    - name: Build project
+      run: npm run build
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-        # npm ci is relatively faster than npm install
-      - name: Install NPM packages
-        run: npm ci
-
-      - name: Build project
-        run: npm run build
-
-      - name: upload build files
-        uses: actions/upload-artifact@v2
-        with:
-          name: production-files
-          path: ./build
-
+    - name: upload build files
+      uses: actions/upload-artifact@v2
+      with:
+        name: production-files
+        path: ./build
+  
   deploy:
     name: Deploy
     needs: build
@@ -42,19 +42,18 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-
+    
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: production-files
-          path: ./build
+    - name: Download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: production-files
+        path: ./build
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v2
-        with:
-          #repo_token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          entrypoint: ./build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Deploy to gh-pages
+      uses: peaceiris/actions-gh-pages@v2
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        entrypoint: ./build
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
