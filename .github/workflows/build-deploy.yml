@@ -52,9 +52,7 @@ jobs:
         path: ./build
 
     - name: Deploy to gh-pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: ruppo-912116/ruppo-912116.github.io
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./build
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
