@@ -1,10 +1,12 @@
 import './App.css';
+import Circle from "./animation/circle/Circle";
 
 function App() {
   return (
-    <div>
-      Hello there!
-    </div>
+    <>
+        <Circle/>
+        <div>Hello there!</div>
+    </>
   );
 }
 
