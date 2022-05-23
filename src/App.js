@@ -5,7 +5,7 @@ function App() {
   return (
     <>
         <Circle/>
-        <div>Hello there!</div>
+        <div style={{position: "absolute",  left:"50%",top:"50%", zIndex:-1}}>Hello there!</div>
     </>
   );
 }
