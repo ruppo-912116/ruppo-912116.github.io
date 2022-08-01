@@ -2,12 +2,15 @@ import './App.css';
 import Circle from "./animation/circle/Circle";
 
 function App() {
-  return (
-    <>
-        <Circle/>
-        <div style={{position: "absolute",  left:"50%",top:"50%", zIndex:-1}}>Hello there!</div>
-    </>
-  );
+    return (
+        <>
+            <Circle/>
+            <div
+                className={"absolute left-0.5 top-0.5 cursor-pointer"}
+            >Hello there, i am rupan!
+            </div>
+        </>
+    );
 }
 
 export default App;
