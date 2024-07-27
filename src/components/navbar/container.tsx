@@ -12,8 +12,8 @@ export default function NavbarContainer() {
     return (
         <div className={"sticky px-2"}>
             <div className={"flex justify-between items-center"}>
-                <h1 className={"text-primary-light dark:text-primary-dark font-bold"}>RUPAN</h1>
-                <div className={"flex gap-2 p-2"}>
+                <h1 className={"text-primary-light dark:text-neutral-light font-bold"}>RUPAN</h1>
+                <div className={"flex gap-2 p-2 text-neutral-dark dark:text-neutral-light"}>
                     <h2 className={""} onClick={handleRouteNavigation}>Home</h2>
                     <h2 onClick={handleRouteNavigation}>Projects</h2>
                     <h2 onClick={handleRouteNavigation}>Work</h2>
