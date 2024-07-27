@@ -1,5 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+.idea/**
 # dependencies
 /node_modules
 /.pnp
@@ -38,3 +38,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+/.idea/jsLinters/eslint.xml
+/.idea/modules.xml
