@@ -8,6 +8,8 @@ import ContactIcon from "@/icons/contact-icon";
 
 export default function NavbarContainer() {
 
+    const router = useRouter();
+
     const items = [
         {
             "title": "Home",
@@ -31,12 +33,6 @@ export default function NavbarContainer() {
         }
     ]
 
-    const router = useRouter();
-
-    const handleRouteNavigation = (e: any) => {
-        console.log(e);
-    }
-
     function NavbarItem({children, title, handleOnClick}: any) {
         return (
             <div className={"flex gap-1 items-center cursor-pointer hover:text-gray-500"} onClick={handleOnClick}>
@@ -57,11 +53,6 @@ export default function NavbarContainer() {
                         handleOnClick={i.handleClick}>
                         {i.icon}
                     </NavbarItem>)}
-                    {/*<h2 onClick={handleRouteNavigation}>Home</h2>*/}
-                    {/*<h2 onClick={handleRouteNavigation}>Projects</h2>*/}
-                    {/*<h2 onClick={handleRouteNavigation}>Work</h2>*/}
-                    {/*<h2 onClick={handleRouteNavigation}>Skills</h2>*/}
-                    {/*<h2 onClick={handleRouteNavigation}>Contact me</h2>*/}
                     <ThemeSwitcher/>
                 </div>
             </div>
