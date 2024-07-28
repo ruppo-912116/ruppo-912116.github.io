@@ -1,6 +1,6 @@
 export default function HeroSectionContainer(){
     return (
-        <div className={"flex justify-between items-end p-16 text-neutral-dark dark:text-neutral-light"}>
+        <div className={"flex justify-between items-end text-neutral-dark dark:text-neutral-light"}>
             <div>
                 <h1 className={"font-bold  text-4xl "}>Rupan Chaulagain.</h1>
                 <h3 className={"dark:text-neutral-300 text-2xl"}>Full stack Developer</h3>
