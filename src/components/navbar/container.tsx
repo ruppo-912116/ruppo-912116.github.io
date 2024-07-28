@@ -45,7 +45,7 @@ export default function NavbarContainer() {
     return (
             <div className={"fixed top-0 right-0 left-0 px-0 sm:px-4 bg-white dark:bg-neutral-dark h-16 md:mt-4 md:mx-40 flex justify-around sm:justify-between items-center"}>
                 <h1 className={"text-primary-light dark:text-neutral-light font-bold"}>RUPAN</h1>
-                <div className={"flex gap-2 p-2 text-neutral-dark dark:text-neutral-light"}>
+                <div className={"flex gap-4 p-2 text-neutral-dark dark:text-neutral-light"}>
                     {items.map(i => <NavbarItem
                         key={"title"}
                         title={i.title}
