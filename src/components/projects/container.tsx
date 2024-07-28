@@ -59,7 +59,7 @@ export default function ProjectsContainer() {
     return (
         <>
             <SectionHeader title={"Projects"}/>
-            <div className={"grid grid-cols-5 gap-2"}>
+            <div className={"grid grid-cols-1 md:grid-cols-5 gap-2"}>
                 {projects.map(project => <ProjectCard key={project.title} projectImage={project.image}
                                                       title={project.title}
                                                       link={project.link}
