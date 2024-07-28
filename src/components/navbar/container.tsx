@@ -39,13 +39,16 @@ export default function NavbarContainer() {
 
     function NavbarItem({children, title, handleOnClick}: any) {
         return (
-            <h2 className={"flex gap-1 items-center"} onClick={handleOnClick}>{children}{title}</h2>
+            <div className={"flex gap-1 items-center cursor-pointer hover:text-gray-500"} onClick={handleOnClick}>
+                {children}
+                <p className={"hidden sm:block"}>{title}</p>
+            </div>
         )
     }
 
     return (
-        <div className={"sticky px-16 bg-transparent"}>
-            <div className={"flex justify-between items-center"}>
+        <div className={"sticky px-0 sm:px-16 bg-transparent"}>
+            <div className={"flex justify-around sm:justify-between items-center"}>
                 <h1 className={"text-primary-light dark:text-neutral-light font-bold"}>RUPAN</h1>
                 <div className={"flex gap-2 p-2 text-neutral-dark dark:text-neutral-light"}>
                     {items.map(i => <NavbarItem
