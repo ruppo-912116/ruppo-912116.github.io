@@ -12,7 +12,8 @@ export default function ProjectsContainer() {
             desc: "The PDF Editor project aims to develop a robust, feature-rich web\n" +
                 "application that allows users to create, edit, annotate, anonymize and\n" +
                 "manage PDF documents quickly and efficiently.",
-            link: "https://portal.tm7.eu"
+            link: "https://portal.tm7.eu",
+            stack: ["Nextjs", "Springboot", "keycloak", "openfga", "postgres"]
         },
         {
             title: "Better Collected",
@@ -23,7 +24,8 @@ export default function ProjectsContainer() {
                 src="https://bettercollected.com/content/images/2024/05/Layer-2--1-.svg"
                 alt="Privacy-Friendly Form Builder"/>,
             desc: "Privacy-Friendly Form Builder For Conscious Companies",
-            link: "https://bettercollected.com"
+            link: "https://bettercollected.com",
+            stack: ["Nextjs", "fastapi", "mongodb"]
         },
         {
             title: "Mempool Explorer",
@@ -33,13 +35,15 @@ export default function ProjectsContainer() {
                 "This project aims to provide real-time insights into the status and\n" +
                 "performance of the Cardano network by tracking transaction volumes,\n" +
                 "fees, and other relevant metrics.",
-            link: ""
+            link: "",
+            stack: ["Nextjs", "express", "postgres", "prisma"]
         },
         {
             title: "CNFT Registry",
             image: "",
             desc: "CNFT Registry",
-            link: ""
+            link: "",
+            stack: ["express", "Nextjs", "postgres"]
         },
         {
             title: "Blockchain Wallet using SRAM PUF",
@@ -51,7 +55,8 @@ export default function ProjectsContainer() {
                 "In essence, we build a non-clonable cryptocurrency wallet to store private\n" +
                 "keys and validate wallet functions like transaction signing and\n" +
                 "verification",
-            link: "https://github.com/ruppo-912116/Blockchain-wallet"
+            link: "https://github.com/ruppo-912116/Blockchain-wallet",
+            stack: ["react-native", "web3js"]
         },
     ]
 
@@ -63,6 +68,7 @@ export default function ProjectsContainer() {
                 {projects.map(project => <ProjectCard key={project.title} projectImage={project.image}
                                                       title={project.title}
                                                       link={project.link}
+                                                      stack={project.stack}
                                                       description={project.desc}/>)}
             </div>
         </>
