@@ -1,12 +1,14 @@
 "use client";
 import LinkIcon from "@/icons/link-icon";
 import {useRouter} from "next/navigation";
+import Capsules from "@/components/projects/capsules";
 
-export default function ProjectCard({projectImage, title, description, link}: {
+export default function ProjectCard({projectImage, title, description, link, stack}: {
     projectImage: any;
     title: string;
     description: string;
     link: string;
+    stack: Array<string>;
 }) {
     //TODO: add logo, add the capsules to show which development stack was used
     const router = useRouter();
@@ -19,6 +21,7 @@ export default function ProjectCard({projectImage, title, description, link}: {
                     <h1 className={"font-bold text-lg"}>{title} </h1>
                 </div>
                 <p className={"text-gray-600 dark:text-neutral-light"}>{description}</p>
+                {stack.map(s => <Capsules key={s} content={s} className={"bg-green-200 text-green-600"}/>)}
             </div>
         </div>
     )
