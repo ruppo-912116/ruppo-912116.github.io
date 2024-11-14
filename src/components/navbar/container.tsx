@@ -5,6 +5,13 @@ import HomeIcon from "@/icons/home-icon";
 import ProjectsIcon from "@/icons/projects-icon";
 import WorkIcon from "@/icons/work-icon";
 import ContactIcon from "@/icons/contact-icon";
+import React from "react";
+
+interface NavbarItemProps {
+    title?: string;
+    handleOnClick?: () => void;
+    children?: React.ReactNode;
+}
 
 export default function NavbarContainer() {
 
@@ -33,7 +40,7 @@ export default function NavbarContainer() {
         }
     ]
 
-    function NavbarItem({children, title, handleOnClick}: any) {
+    function NavbarItem({children, handleOnClick, title}: NavbarItemProps) {
         return (
             <div className={"flex gap-1 items-center cursor-pointer hover:text-gray-500"} onClick={handleOnClick}>
                 {children}
@@ -43,17 +50,13 @@ export default function NavbarContainer() {
     }
 
     return (
-            <div className={"fixed top-0 right-0 left-0 px-0 sm:px-4 bg-white dark:bg-neutral-dark h-16 md:mt-4 md:mx-40 flex justify-around sm:justify-between items-center"}>
-                <h1 className={"text-primary-light dark:text-neutral-light font-bold"}>RUPAN</h1>
-                <div className={"flex gap-4 p-2 text-neutral-dark dark:text-neutral-light"}>
-                    {items.map(i => <NavbarItem
-                        key={"title"}
-                        title={i.title}
-                        handleOnClick={i.handleClick}>
-                        {i.icon}
-                    </NavbarItem>)}
-                    <ThemeSwitcher/>
-                </div>
+        <div
+            className={"fixed top-0 px-0 sm:px-4 bg-white dark:bg-neutral-dark h-16 md:mt-4 flex justify-around sm:justify-between items-center"}>
+            <h1 className={"text-primary-light dark:text-neutral-light font-bold"}>RUPAN</h1>
+            <div className={"flex gap-4 p-2 text-neutral-dark dark:text-neutral-light"}>
+                {items.map(i => <NavbarItem title={i.title} handleOnClick={i.handleClick}>{i.icon}</NavbarItem>)}
+                <ThemeSwitcher/>
             </div>
+        </div>
     )
 }
