@@ -54,7 +54,7 @@ export default function NavbarContainer() {
             className={"fixed top-0 px-0 sm:px-4 bg-white dark:bg-neutral-dark h-16 md:mt-4 flex justify-around sm:justify-between items-center"}>
             <h1 className={"text-primary-light dark:text-neutral-light font-bold"}>RUPAN</h1>
             <div className={"flex gap-4 p-2 text-neutral-dark dark:text-neutral-light"}>
-                {items.map(i => <NavbarItem title={i.title} handleOnClick={i.handleClick}>{i.icon}</NavbarItem>)}
+                {items.map(i => <NavbarItem key={i.title} title={i.title} handleOnClick={i.handleClick}>{i.icon}</NavbarItem>)}
                 <ThemeSwitcher/>
             </div>
         </div>
