@@ -6,13 +6,15 @@ import Banner from "@/components/banner";
 
 export default function Home() {
     return (
-        <main className={"bg-neutral-light dark:bg-neutral-dark min-h-screen"}>
+        <main className={"bg-white dark:bg-neutral-dark min-h-screen bg-gray-200"}>
             <Banner/>
-            <NavbarContainer/>
-            <div className={"px-4 pb-20 pt-4 mt-16 md:px-40 md:pt-16"}>
-                <HeroSectionContainer/>
-                <ServicesContainer/>
-                <ProjectsContainer/>
+            <div className={"px-4 md:px-40"}>
+                <NavbarContainer/>
+                <div className={"py-16 pt-4 px-16 rounded-2xl md:pt-16"}>
+                    <HeroSectionContainer/>
+                    <ServicesContainer/>
+                    <ProjectsContainer/>
+                </div>
             </div>
         </main>
     );
