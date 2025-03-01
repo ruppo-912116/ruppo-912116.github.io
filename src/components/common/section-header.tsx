@@ -1,10 +1,8 @@
-import FrontArrowIcon from "@/icons/front-arrow-icon";
-
-export default function SectionHeader({title}: { title: string }) {
+export default function SectionHeader({title, secHeader}: { title: string, secHeader?: string }) {
     return (
-        <div className={"flex gap-2 mt-16 mb-4 text-lg dark:text-neutral-light"}>
-            <FrontArrowIcon/>
-            <h1 className={"text-neutral-dark dark:text-neutral-light"}>{title}</h1>
+        <div className={"mb-8"}>
+            <h4 className={"flex mb-1 font-semibold text-sm justify-center text-primary-light dark:text-primary-light"}>{title.toUpperCase()}</h4>
+            <h1 className={"flex justify-center text-2xl font-bold dark:text-primary-light"}>{secHeader}</h1>
         </div>
     );
 }
