@@ -63,7 +63,7 @@ export default function ProjectsContainer() {
 
     return (
         <>
-            <SectionHeader title={"Projects"}/>
+            <SectionHeader title={"Projects"} secHeader={"Projects I have worked on"}/>
             <div className={"grid grid-cols-1 md:grid-cols-5 gap-2"}>
                 {projects.map(project => <ProjectCard key={project.title} projectImage={project.image}
                                                       title={project.title}
