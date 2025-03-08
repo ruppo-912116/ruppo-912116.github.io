@@ -2,13 +2,14 @@ import SectionHeader from "@/components/common/section-header";
 import Image from "next/image";
 import PdfEditorLogo from "@/logos/pdf-editor-logo";
 import ProjectCard from "@/components/projects/project-card";
+import ProjectCardNew from "@/components/projects/project-card-new";
 
 export default function ProjectsContainer() {
 
     const projects = [
         {
-            title: "Pdf Editor",
-            image: <PdfEditorLogo/>,
+            title: "PDF Editor",
+            image: "/projects/pdfeditor-banner.png",
             desc: "The PDF Editor project aims to develop a robust, feature-rich web\n" +
                 "application that allows users to create, edit, annotate, anonymize and\n" +
                 "manage PDF documents quickly and efficiently.",
@@ -17,19 +18,14 @@ export default function ProjectsContainer() {
         },
         {
             title: "Better Collected",
-            image: <Image
-                width={0}
-                height={0}
-                style={{width: "100%", height: "100%"}}
-                src="https://bettercollected.com/content/images/2024/05/Layer-2--1-.svg"
-                alt="Privacy-Friendly Form Builder"/>,
+            image: "/projects/pdfeditor-banner.png",
             desc: "Privacy-Friendly Form Builder For Conscious Companies",
             link: "https://bettercollected.com",
             stack: ["Nextjs", "fastapi", "mongodb"]
         },
         {
             title: "Mempool Explorer",
-            image: "",
+            image: "/projects/pdfeditor-banner.png",
             desc: "The Cardano Mempool Monitoring System is designed to monitor andanalyze the Cardano blockchain's mempool—the area where\n" +
                 "unconfirmed transactions are held before they are included in a block.\n" +
                 "This project aims to provide real-time insights into the status and\n" +
@@ -40,14 +36,14 @@ export default function ProjectsContainer() {
         },
         {
             title: "CNFT Registry",
-            image: "",
+            image: "/projects/pdfeditor-banner.png",
             desc: "CNFT Registry",
             link: "",
             stack: ["express", "Nextjs", "postgres"]
         },
         {
             title: "Blockchain Wallet using SRAM PUF",
-            image: "",
+            image: "/projects/pdfeditor-banner.png",
             desc: "Storing private data like private keys of a digital wallet in a device that is\n" +
                 "resistant to physical attacks is difficult and expensive. Instead if the key\n" +
                 "information could be derived from the complex physical properties of the\n" +
@@ -64,12 +60,14 @@ export default function ProjectsContainer() {
     return (
         <>
             <SectionHeader title={"Projects"} secHeader={"Projects I have worked on"}/>
-            <div className={"grid grid-cols-1 md:grid-cols-5 gap-2"}>
-                {projects.map(project => <ProjectCard key={project.title} projectImage={project.image}
-                                                      title={project.title}
-                                                      link={project.link}
-                                                      stack={project.stack}
-                                                      description={project.desc}/>)}
+            <div className={"flex flex-col gap-8"}>
+                {projects.map(project => <ProjectCardNew
+                    key={project.title}
+                    image={project.image}
+                    title={project.title}
+                    link={project.link}
+                    stack={project.stack}
+                    description={project.desc}/>)}
             </div>
         </>
     )
