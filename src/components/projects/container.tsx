@@ -18,7 +18,7 @@ export default function ProjectsContainer() {
         },
         {
             title: "Better Collected",
-            image: "/projects/pdfeditor-banner.png",
+            image: "/projects/bettercollected-banner.png",
             desc: "Privacy-Friendly Form Builder For Conscious Companies",
             link: "https://bettercollected.com",
             stack: ["Nextjs", "fastapi", "mongodb"]
